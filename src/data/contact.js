@@ -1,0 +1,35 @@
+export const contactLinks = [
+  {
+    id: 'email',
+    href: 'mailto:7066abdulrahman@gmail.com',
+    icon: '✉',
+    label: 'Email',
+    value: '7066abdulrahman@gmail.com',
+    showArrow: true,
+  },
+  {
+    id: 'phone',
+    href: 'tel:+917066462136',
+    icon: '☎',
+    label: 'Phone',
+    value: '+91 7066 462 136',
+    showArrow: true,
+  },
+  {
+    id: 'linkedin',
+    href: 'https://linkedin.com/in/abdulrahemanmdamjed',
+    target: '_blank',
+    icon: 'in',
+    label: 'LinkedIn',
+    value: 'linkedin.com/in/abdulrahemanmdamjed',
+    showArrow: true,
+  },
+  {
+    id: 'location',
+    href: null,
+    icon: '📍',
+    label: 'Location',
+    value: 'Degloor Naka Nanded, 431604, Maharashtra',
+    showArrow: false,
+  },
+];
