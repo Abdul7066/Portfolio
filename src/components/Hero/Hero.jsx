@@ -35,7 +35,7 @@ export default function Hero() {
           <a href="#projects" className="btn btn-primary">▸ View Projects</a>
           <a href="#contact"  className="btn btn-secondary">Get in Touch →</a>
           <a
-            href="/MdAbdulRahman_CV_2026.pdf"
+            href={`${import.meta.env.BASE_URL}MdAbdulRahman_CV_2026.pdf`}
             download="MdAbdulRahman_CV_2026.pdf"
             className="btn btn-cv"
           >

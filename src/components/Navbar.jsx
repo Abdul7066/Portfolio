@@ -26,7 +26,7 @@ export default function Navbar() {
         </div>
 
         <a
-          href="/MdAbdulRahman_CV_2026.pdf"
+          href={`${import.meta.env.BASE_URL}MdAbdulRahman_CV_2026.pdf`}
           download="MdAbdulRahman_CV_2026.pdf"
           className="btn-nav-cv"
           title="Download CV"
