@@ -12,7 +12,7 @@ export default function Navbar() {
     <>
       <nav className={styles.nav}>
         <a href="#" className={styles.logo} onClick={close}>
-          ARCHITECT.SYS
+          ABDULRAHMAN's Portfolio
         </a>
 
         <ul className={styles.links}>
