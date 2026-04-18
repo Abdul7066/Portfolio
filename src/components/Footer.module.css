@@ -1,0 +1,60 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 3rem;
+  background: #060913;
+  color: #6b7280;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%); /* full bleed */
+  box-sizing: border-box;
+  margin-top: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+}
+
+.links a {
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.links a:hover {
+  color: #c084fc;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.statusDot {
+  width: 4px;
+  height: 4px;
+  background-color: #c084fc;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #c084fc;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    text-align: center;
+  }
+}

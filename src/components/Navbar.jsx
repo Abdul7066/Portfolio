@@ -1,49 +1,32 @@
-import { useTheme } from '../hooks/useTheme';
+import { Mail } from 'lucide-react';
+import styles from './Navbar.module.css';
 
-/**
- * Navbar — sticky top navigation with logo, links, availability badge and theme toggle.
- */
 export default function Navbar() {
-  const { theme, toggleTheme } = useTheme();
-
   return (
-    <nav>
-      <div className="nav-logo">
-        Abdul Rahman's Portfolio
-      </div>
+    <nav className={styles.nav}>
+      <a href="#" className={styles.logo}>
+        ARCHITECT.SYS
+      </a>
 
-      <ul className="nav-links">
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+      <ul className={styles.links}>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#projects">PROJECTS</a></li>
+        <li><a href="#experience">EXPERIENCE</a></li>
+        <li><a href="#contact" className={styles.active}>CONTACT</a></li>
       </ul>
 
-      <div className="nav-right">
-        <div className="nav-status">
-          <div className="status-dot" />
-          Available for roles
-        </div>
-
-        <a
-          href={`${import.meta.env.BASE_URL}MdAbdulRahman_CV_2026.pdf`}
-          download="MdAbdulRahman_CV_2026.pdf"
-          className="btn-nav-cv"
-          title="Download CV"
-        >
-          ↓ CV
+      <div className={styles.right}>
+        <a href="mailto:7066abdulrahman@gmail.com" className={styles.iconBtn} aria-label="Messages">
+          <Mail size={20} />
         </a>
-
-        <button
-          className="theme-toggle"
-          onClick={toggleTheme}
-          title="Toggle theme"
-          aria-label="Toggle dark/light mode"
+        <a 
+          href={`${import.meta.env.BASE_URL}MdAbdulRahman_CV_2026.pdf`} 
+          download="MdAbdulRahman_CV_2026.pdf"
+          className={styles.hireBtn}
+          style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
         >
-          <span className="theme-toggle-icon icon-dark">🌙</span>
-          <span className="theme-toggle-icon icon-light">☀️</span>
-          <div className="theme-toggle-thumb" />
-        </button>
+          HIRE ME
+        </a>
       </div>
     </nav>
   );
