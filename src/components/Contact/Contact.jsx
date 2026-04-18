@@ -1,5 +1,4 @@
 import React from 'react';
-import Scene from './Scene';
 import styles from './Contact.module.css';
 import { Paperclip, Send } from 'lucide-react';
 
@@ -16,10 +15,6 @@ const Twitter = ({ size, className }) => (
 export default function Contact() {
   return (
     <section className={styles.contactSection} id="contact">
-      <div className={styles.sceneContainer}>
-        <Scene />
-      </div>
-
       <div className={styles.contentWrapper}>
         {/* Left Column */}
         <div>
@@ -61,7 +56,11 @@ export default function Contact() {
 
           <div className={styles.freelanceBanner}>
             <div className={styles.freelanceVisual}>
-              {/* Optional: We can add an inline SVG or more CSS here if needed */}
+              <img
+                src={`${import.meta.env.BASE_URL}freelance-workspace.png`}
+                alt="Developer workspace"
+                className={styles.freelanceImg}
+              />
             </div>
             <div className={styles.freelanceLabel}>
               <div className={styles.pulseDot}></div>

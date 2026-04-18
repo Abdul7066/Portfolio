@@ -3,8 +3,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem 3rem;
-  background: #060913;
-  color: #6b7280;
+  background: var(--bg);
+  color: var(--text2);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 0.65rem;
   text-transform: uppercase;
@@ -13,7 +13,7 @@
   margin-left: calc(-50vw + 50%); /* full bleed */
   box-sizing: border-box;
   margin-top: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--border);
 }
 
 .left {
@@ -27,7 +27,7 @@
 }
 
 .links a {
-  color: #6b7280;
+  color: var(--text2);
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -53,8 +53,23 @@
 @media (max-width: 768px) {
   .footer {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.25rem;
     padding: 1.5rem;
     text-align: center;
   }
+
+  .links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
 }
+
+@media (max-width: 480px) {
+  .footer {
+    font-size: 0.6rem;
+    padding: 1.25rem 1rem;
+    gap: 1rem;
+  }
+}
+

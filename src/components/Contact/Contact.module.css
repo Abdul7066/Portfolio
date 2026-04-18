@@ -1,43 +1,55 @@
 .contactSection {
-  position: relative;
   width: 100vw;
-  margin-left: calc(-50vw + 50%); /* break out of full container */
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  margin-left: calc(-50vw + 50%);
+  padding: 5rem 0;
+  background: var(--bg);
+  transition: background 0.3s;
   font-family: system-ui, -apple-system, sans-serif;
 }
 
-.sceneContainer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
 
 .contentWrapper {
-  position: relative;
-  z-index: 2;
   width: 100%;
   max-width: 1120px;
+  margin: 0 auto;
   padding: 4rem 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 6rem;
-  color: #fff;
+  color: var(--text);
   align-items: start;
 }
 
 @media (max-width: 1024px) {
   .contentWrapper {
     grid-template-columns: 1fr;
-    gap: 4rem;
+    gap: 3rem;
   }
 }
+
+@media (max-width: 600px) {
+  .contactSection { padding: 3rem 0; }
+
+  .titleBox h2 { font-size: 3.5rem; }
+
+  .socialsRow {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .socialCard { min-width: calc(50% - 0.375rem); }
+
+  .freelanceBanner { max-width: 100%; }
+
+  .formContainer { padding: 1.5rem; border-radius: 12px; }
+
+  .formGrid,
+  .infoGrid { grid-template-columns: 1fr; gap: 1.25rem; }
+
+  .inputGroup.fullWidth,
+  .infoGroup.fullWidth { grid-column: 1; }
+}
+
 
 /* Left typography */
 .titleBox h2 {
@@ -47,7 +59,7 @@
   margin: 0;
   letter-spacing: -0.05em;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--text);
 }
 
 .titleBox h2 em {
@@ -58,7 +70,7 @@
 .description {
   margin-top: 1.5rem;
   font-size: 1.125rem;
-  color: #9ca3af;
+  color: var(--text2);
   line-height: 1.6;
   max-width: 400px;
 }
@@ -71,8 +83,8 @@
 }
 
 .socialCard {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--bg3);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.5rem;
   display: flex;
@@ -87,7 +99,7 @@
 }
 
 .socialCard:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--bg2);
   border-color: rgba(192, 132, 252, 0.3);
   transform: translateY(-2px);
 }
@@ -101,20 +113,20 @@
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #6b7280;
+  color: var(--text3);
 }
 
 .socialCardName {
   font-weight: 600;
   font-size: 1.125rem;
-  color: #fff;
+  color: var(--text);
 }
 
 /* Freelance Banner */
 .freelanceBanner {
   margin-top: 3rem;
-  background: rgba(10, 11, 18, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--bg2);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1.5rem;
   max-width: 320px;
@@ -122,30 +134,37 @@
 }
 
 .freelanceVisual {
-  height: 120px;
-  background: linear-gradient(145deg, rgba(192,132,252,0.1) 0%, rgba(0,0,0,0) 100%);
+  height: 140px;
   border-radius: 8px;
   margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(192, 132, 252, 0.1);
   overflow: hidden;
   position: relative;
+  border: 1px solid var(--border);
 }
 
-/* Add some abstract horizontal grid lines to freelanceVisual */
-.freelanceVisual::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 20px 20px;
-  transform: perspective(500px) rotateX(60deg);
-  transform-origin: bottom;
+.freelanceImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
 }
+
+.freelanceBanner:hover .freelanceImg {
+  transform: scale(1.04);
+}
+
+/* Subtle purple tint overlay on image */
+.freelanceVisual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(192, 132, 252, 0.25) 100%);
+  pointer-events: none;
+}
+
+
 
 .freelanceLabel {
   display: flex;
@@ -174,8 +193,8 @@
 
 /* Right side Form */
 .formContainer {
-  background: rgba(10, 11, 18, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--bg2);
+  border: 1px solid var(--border);
   border-radius: 20px;
   padding: 3rem;
   backdrop-filter: blur(20px);
@@ -207,17 +226,17 @@
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #6b7280;
+  color: var(--text3);
 }
 
 .inputGroup input,
 .inputGroup textarea,
 .infoValue {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--bg3);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 1rem;
-  color: #fff;
+  color: var(--text);
   font-size: 1rem;
   font-family: inherit;
   transition: border-color 0.2s;
@@ -252,7 +271,7 @@
 .submitBtn {
   flex: 1;
   background: #8b5cf6;
-  color: #fff;
+  color: var(--text);
   border: none;
   border-radius: 8px;
   padding: 1rem;
@@ -273,21 +292,21 @@
 }
 
 .iconBtn {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--border);
+  border: 1px solid var(--border);
   border-radius: 8px;
   width: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #9ca3af;
+  color: var(--text2);
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .iconBtn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  background: var(--border2);
+  color: var(--text);
 }
 
 /* Skill Chips */
@@ -299,12 +318,12 @@
 }
 
 .chip {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--bg3);
+  border: 1px solid var(--border);
   border-radius: 20px;
   padding: 0.5rem 1rem;
   font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #9ca3af;
+  color: var(--text2);
 }
