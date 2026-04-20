@@ -30,8 +30,8 @@ export default function Navbar() {
             <Mail size={18} />
           </a>
           <a
-            href={`${import.meta.env.BASE_URL}MdAbdulRahman_CV_2026.pdf`}
-            download="MdAbdulRahman_CV_2026.pdf"
+            href={`${import.meta.env.BASE_URL}MdAbdulRahmanMERNDeveloper_2026.pdf`}
+            download="MdAbdulRahmanMERNDeveloper_2026.pdf"
             className={`${styles.hireBtn} ${styles.hideOnMobile}`}
             style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
           >
@@ -61,8 +61,8 @@ export default function Navbar() {
               <Mail size={16} /> EMAIL ME
             </a>
             <a
-              href={`${import.meta.env.BASE_URL}MdAbdulRahman_CV_2026.pdf`}
-              download="MdAbdulRahman_CV_2026.pdf"
+              href={`${import.meta.env.BASE_URL}MdAbdulRahmanMERNDeveloper_2026.pdf`}
+              download="MdAbdulRahmanMERNDeveloper_2026.pdf"
               className={`${styles.mobileActionBtn} ${styles.mobileHire}`}
               onClick={close}
             >

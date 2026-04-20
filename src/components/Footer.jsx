@@ -11,7 +11,7 @@ export default function Footer() {
         <a href="https://github.com/Abdul7066" target="_blank" rel="noreferrer">GITHUB</a>
         <a href="https://linkedin.com/in/abdulrahemanmdamjed" target="_blank" rel="noreferrer">LINKEDIN</a>
         <a href="https://twitter.com/AbdulFurquan" target="_blank" rel="noreferrer">TWITTER</a>
-        <a href={`${import.meta.env.BASE_URL}MdAbdulRahman_CV_2026.pdf`} download="MdAbdulRahman_CV_2026.pdf">RESUME</a>
+        <a href={`${import.meta.env.BASE_URL}MdAbdulRahmanMERNDeveloper_2026.pdf`} download="MdAbdulRahmanMERNDeveloper_2026.pdf">RESUME</a>
       </div>
 
       <div className={styles.right}>
