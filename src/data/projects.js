@@ -34,4 +34,22 @@ export const projects = [
     ],
     stack: ['Node.js', 'Express.js', 'MongoDB', 'Multer', 'Nodemailer', 'RBAC', 'Helmet', 'React.js'],
   },
+  {
+    id: 3,
+    type: 'Production',
+    period: '08/2024 – 01/2025',
+    name: 'Chromecast Management System',
+    subtitle: 'Backend Infrastructure — Secure QR & Session Logic',
+    description:
+      'Developed a robust backend enabling seamless communication between web dashboards, guest panels, and Chromecast devices via secure QR sessions.',
+    features: [
+      'Developed secure REST APIs for Chromecast device and session management',
+      'Implemented JWT authentication and QR-based guest session system',
+      'Designed MongoDB schemas for users, devices, and sessions',
+      'Built QR generation and verification logic using short-lived JWT tokens',
+      'Integrated with frontend guest panel for instant Chromecast connection',
+      'Deployed and optimized APIs on Render with proper CORS and error handling',
+    ],
+    stack: ['Node.js', 'Express.js', 'MongoDB', 'JWT', 'Render', 'QR-Code', 'CORS'],
+  },
 ];
